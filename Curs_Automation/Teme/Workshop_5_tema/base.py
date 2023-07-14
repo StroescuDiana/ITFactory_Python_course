@@ -28,17 +28,19 @@ class Base:
     def accept_cookies(self, locator: tuple):
         self.find(locator).click()
 
-    def close_subscription_popUp(self, locator: tuple, time: int = 10):
-        self.wait(locator, time)
-
     def search_item(self, locator: tuple, message: str):
         return self.find(locator).send_keys(message)
 
     def click(self, locator):
         self.find(locator).click()
 
-
     def page_title(self):
         page_title = self.driver.title
         return page_title
+
+    def page_url(self):
+        page_url = self.driver.current_url
+        return page_url
+
+
 
