@@ -208,7 +208,7 @@ instanta1.variabila_statica = 5
 # Afisăm din nou valoarea variabilei statice pentru ambele instanțe
 print(instanta1.variabila_statica)  # Output: 5
 print(instanta2.variabila_statica)  # Output: 2
-'''
+
 
 class ContBancar:
     numar_conturi = 0
@@ -242,6 +242,8 @@ print(f"Suma adaugata este de 112 lei. Noul sold este de: {stroescu_acc.set_new_
 print(f"Soldul curent este de {stroescu_acc.get_sold()} lei.")
 
 print(stroescu_acc.retragere(300))
+'''
+
 
 
 
