@@ -1,6 +1,5 @@
 class WebElements:
     RED = '\033[91m'
-    RED1 = '\033[93m'
     GREEN = '\033[92m'
     RESET = '\033[0m'
     url = "https://www.elefant.ro/"

@@ -3,9 +3,6 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# driver = WebDriver.Chrome()
-# driver.maximize_window()
-
 
 class Base:
 
