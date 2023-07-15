@@ -1,14 +1,12 @@
-import time
 import unittest
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from Teme.Workshop_5_tema.Classes import OpenPage, SearchItem, PageTitle, Negative_log_in
+from Elefant_ro_site.main.Classes import OpenPage, SearchItem, PageTitle
 
 
-class Testing(unittest.TestCase):
-
+class TestPositive(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         self.driver.maximize_window()
@@ -25,16 +23,6 @@ class Testing(unittest.TestCase):
 
         pageTitle = PageTitle(self.driver)
         pageTitle.correct_page()
-
-    def test_negative_exercises(self):
-
-        elefant_ro = OpenPage(self.driver)
-        elefant_ro.open_page()
-
-        log_in = Negative_log_in(self.driver)
-        log_in.negative()
-        log_in.invalid_email_login()
-
 
     def tearDown(self):
         self.driver.quit()
