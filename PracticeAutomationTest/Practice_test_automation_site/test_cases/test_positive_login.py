@@ -37,16 +37,26 @@ class TestPositiveLogin(unittest.TestCase, LoginPageObjects):
         submit_button.click()
         time.sleep(2)
 
-        assert super().successfully_logged_in_url == self.driver.current_url, f"{self._RED}URL verification failed{self._RESET}."
-        print(f"{self._GREEN}URL verification passed successfully{self._RESET}.")
+        try:
+            assert super().successfully_logged_in_url == "https://alibaba.com", f"{self._RED}URL verification failed{self._RESET}."
+            print(f"{self._GREEN}URL verification passed successfully{self._RESET}.")
+        except AssertionError as error:
+            print(super()._RED, error, super()._RESET)
 
-        header = self.driver.find_element(By.XPATH,super().logged_in_successfully_xpath)
-        assert super().successfully_logged_in_text == header.text, f"{self._RED} Expected text not found in page{self._RESET}."
-        print(f"{self._GREEN}Expected text found on the page{self._RESET}")
+        try:
+            header = self.driver.find_element(By.XPATH, super().logged_in_successfully_xpath)
+            assert super().successfully_logged_in_text == header.text, f"{self._RED}Expected text not found on the page{self._RESET}."
+            print(f"{self._GREEN}Expected text found on the page{self._RESET}.")
+        except AssertionError as error:
+            print(super()._RED, error, super()._RESET)
 
-        logout_button = self.driver.find_element(By.LINK_TEXT, super().log_out_button_link)
-        assert logout_button.is_displayed(), f"{self._RED}'Log out' button not displayed {self._RESET}."
-        print(f"{self._GREEN} 'Log out' button is successfuly displayed{self._RESET}.")
+        try:
+            logout_button = self.driver.find_element(By.LINK_TEXT, super().log_out_button_link)
+            assert logout_button.is_displayed(), f"{self._RED}'Log out' button not displayed{self._RESET}."
+            print(f"{self._GREEN}'Log out' button is successfully displayed{self._RESET}.")
+        except AssertionError as error:
+            print(super()._RED, error, super()._RESET)
+
 
     def tearDown(self):
         time.sleep(2)

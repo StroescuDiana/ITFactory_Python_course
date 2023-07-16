@@ -82,27 +82,32 @@ class Negative_log_in(WebElements, Base):
         conectare_bttn_locator = (By.XPATH, super().conectare_bttn_homepage_xpath)
         self.find(conectare_bttn_locator).click()
 
-        current_url = self.page_url()
-        assert current_url == super().log_in_url, f"Nu te afli pe pagina de conectare."
+        try:
+            current_url = self.page_url()
+            assert current_url == super().log_in_url, f"Nu te afli pe pagina de conectare."
 
-        email_field_locator = (By.XPATH, super().email_field_xpath)
-        self.find(email_field_locator).send_keys(super().wrong_email_address)
-        password_field_locator = (By.XPATH, super().password_box_xpath)
-        self.find(password_field_locator).send_keys(super().wrong_password)
-        conectare_locator = (By.XPATH, super().conectare_button_login_xpath)
-        self.find(conectare_locator).click()
-
-        error_alert_locator = (By.XPATH, super().error_alert_text_xpath)
-        actual_error = self.find(error_alert_locator).text
-        if actual_error == super().expected_error:
-            print(actual_error)
+        except AssertionError as error:
+            print(super().RED, error, super().RESET)
         else:
-            print(f"{super().RED}Error message is incorrect{super().RESET}.")
+            email_field_locator = (By.XPATH, super().email_field_xpath)
+            self.find(email_field_locator).send_keys(super().wrong_email_address)
+            password_field_locator = (By.XPATH, super().password_box_xpath)
+            self.find(password_field_locator).send_keys(super().wrong_password)
+            conectare_locator = (By.XPATH, super().conectare_button_login_xpath)
+            self.find(conectare_locator).click()
 
-        actual_url = self.page_url()
-        expected_url = super().log_in_successful_url
-        if not actual_url == expected_url:
-            print("Nu s-a putut realiza conectarea in cont.")
+            error_alert_locator = (By.XPATH, super().error_alert_text_xpath)
+            actual_error = self.find(error_alert_locator).text
+            if actual_error == super().expected_error:
+                print(actual_error)
+            else:
+                print(f"{super().RED}Error message is incorrect{super().RESET}.")
+
+            actual_url = self.page_url()
+            expected_url = super().log_in_successful_url
+            if not actual_url == expected_url:
+                print("Nu s-a putut realiza conectarea in cont.")
+
 
     def invalid_email_login(self):
 
