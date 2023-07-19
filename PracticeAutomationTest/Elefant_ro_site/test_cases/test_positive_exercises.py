@@ -8,7 +8,7 @@ from Elefant_ro_site.main.Classes import OpenPage, SearchItem, PageTitle
 
 class TestPositive(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
 

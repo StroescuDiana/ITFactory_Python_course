@@ -3,9 +3,7 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 
 from Practice_test_automation_site.page_objects.LoginPageObjects import LoginPageObjects
@@ -13,7 +11,7 @@ from Practice_test_automation_site.page_objects.LoginPageObjects import LoginPag
 class TestNegativeLogin(unittest.TestCase, LoginPageObjects):
 
     def setUp(self):
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.set_page_load_timeout(10)
         self.driver.get(super().log_in_page_url)

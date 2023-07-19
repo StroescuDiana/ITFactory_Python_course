@@ -99,7 +99,7 @@ class Negative_log_in(WebElements, Base):
             error_alert_locator = (By.XPATH, super().error_alert_text_xpath)
             actual_error = self.find(error_alert_locator).text
             if actual_error == super().expected_error:
-                print(actual_error)
+                print(actual_error.encode("utf-8"))
             else:
                 print(f"{super().RED}Error message is incorrect{super().RESET}.")
 
