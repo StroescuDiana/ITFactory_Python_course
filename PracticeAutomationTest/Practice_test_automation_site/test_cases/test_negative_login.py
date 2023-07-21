@@ -24,9 +24,11 @@ class TestNegativeLogin(unittest.TestCase, LoginPageObjects):
         )
         username_field.send_keys(self.invalid_username)
         time.sleep(2)
+
         password_field = self.driver.find_element(By.XPATH, self.password_field_xpath)
         password_field.send_keys(self.valid_password)
         time.sleep(2)
+
         submit_button = self.driver.find_element(By.XPATH, super().submit_login_button_xpath)
         submit_button.click()
         time.sleep(1)
