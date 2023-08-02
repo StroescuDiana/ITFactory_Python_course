@@ -11,7 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class HomePage(WebDriver):
 
-    def load_homepage(self):
+    def load_home_page(self):
         super().driver.get('http://automationexercise.com')
         time.sleep(2)
 

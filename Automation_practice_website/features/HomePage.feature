@@ -1,5 +1,5 @@
-@Test_Case_10
-Feature: Subscription
+Feature: Home page
+  @Test_case_10
   Scenario: Verify Subscription in home page
     When Launch browser
     When Navigate to url "http://automationexercise.com"

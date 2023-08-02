@@ -5,13 +5,13 @@ from pages.HomePage_base import HomePage
 
 @when('Launch browser')
 def step_impl(context):
-    assert context.webdriver != None, f"webdriver is None"
+    assert context.webdriver != None, f"Webdriver is None"
 
 
 @when('Navigate to url "http://automationexercise.com"')
 def step_impl(context):
     context.page = HomePage()
-    context.page.load_homepage()
+    context.page.load_home_page()
 
 
 @when('Verify that home page is visible successfully')
