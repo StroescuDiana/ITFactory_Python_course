@@ -1,10 +1,8 @@
-Feature: Home page
+Feature: Subscription
   @Test_case_10
-  Scenario: Verify Subscription in home page
-    When Launch browser
-    When Navigate to url "http://automationexercise.com"
-    When Verify that home page is visible successfully
-    When Scroll down to footer
-    When Verify text "SUBSCRIPTION"
-    When Enter email address in input and click arrow button
-    Then Verify success message "You have been successfully subscribed!" is visible
+  Scenario: Verify Subscription on the home page
+    Given I am on the Home page
+    When I scroll down to the footer
+    And I verify that the "SUBSCRIPTION" text is visible
+    And I enter an email address in the input and click the arrow button
+    Then I should see the success message "You have been successfully subscribed!"

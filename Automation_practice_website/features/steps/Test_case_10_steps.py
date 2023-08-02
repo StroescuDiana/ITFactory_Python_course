@@ -1,39 +1,29 @@
-from behave import when, then
+from behave import given, when, then
 
 from pages.HomePage_base import HomePage
 
 
-@when('Launch browser')
-def step_impl(context):
-    assert context.webdriver != None, f"Webdriver is None"
-
-
-@when('Navigate to url "http://automationexercise.com"')
+@given("I am on the Home page")
 def step_impl(context):
     context.page = HomePage()
     context.page.load_home_page()
 
 
-@when('Verify that home page is visible successfully')
-def step_impl(context):
-    context.page.home_page_is_visible()
-
-
-@when('Scroll down to footer')
+@when("I scroll down to the footer")
 def step_impl(context):
     context.page.scroll_to_footer()
 
 
-@when('Verify text "SUBSCRIPTION"')
+@when('I verify that the "SUBSCRIPTION" text is visible')
 def step_impl(context):
     context.page.verify_text()
 
 
-@when('Enter email address in input and click arrow button')
+@when('I enter an email address in the input and click the arrow button')
 def step_impl(context):
     context.page.subscribe(context.config.userdata['email'])
 
 
-@then('Verify success message "You have been successfully subscribed!" is visible')
+@then('I should see the success message "You have been successfully subscribed!"')
 def step_impl(context):
     context.page.verify_success_message()
