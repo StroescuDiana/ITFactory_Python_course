@@ -10,7 +10,5 @@ class WebDriver:
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.maximize_window()
 
-    wait = WebDriverWait(driver, 10)
-
     def quit(self):
         self.driver.quit()

@@ -1,9 +1,9 @@
 from behave import given, when, then
 
-from pages.HomePage_base import HomePage
+from pages.home_page import HomePage
 
 
-@given("I am on the Home page")
+@given("I am on the home page of Automation Practice Website")
 def step_impl(context):
     context.page = HomePage()
     context.page.load_home_page()
