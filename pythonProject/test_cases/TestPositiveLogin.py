@@ -12,7 +12,7 @@ from main_pages.LoginPageObjects import LoginPageObjects
 class TestPositiveLogin(unittest.TestCase, LoginPageObjects):
 
     def setUp(self):
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
 
