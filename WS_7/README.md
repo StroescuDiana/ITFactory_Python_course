@@ -1,1 +1,0 @@
-# Workshop project using BDD design pattern from Week 7

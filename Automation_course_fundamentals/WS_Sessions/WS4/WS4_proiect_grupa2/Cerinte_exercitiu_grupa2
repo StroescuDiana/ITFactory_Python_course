@@ -1,0 +1,23 @@
+Sistem Gestiune Stoc Produse
+
+
+2 clase diferite:
+    • O clasă pentru entitatea Produs, cu atributele cod, nume, preţ,
+    cantitate;
+    • O clasă pentru entitatea de Gestiune; un atribut, o colecţie care
+    stochează datele (produsele) în perechi cheie-valoare.
+
+Metode din clasa principală (Gestiune):
+    • constructor()
+    • adauga_produs(cod, nume, pret, cantitate) - adaugă un produs nou în
+    sistem, specificând codul, numele, preţul şi cantitatea disponibilă;
+    • elimina_produs(cod) - elimină un produs din sistem pe baza codului;
+    • actualizeaza_cantitate(cod, cantitate) - actualizează cantitatea
+    disponibilă pentru un produs existent în sistem, pe baza codului;
+    • afisează_stoc() - afişează toate produsele disponibile în stoc şi
+    informaţiile aferente (cod, nume, preţ, cantitate);
+    • cautare_produs(cod) - caută un produs în stoc pe baza codului şi afişează
+    informaţiile aferente dacă produsul există;
+    • produse() - returnează numărul total de produse disponibile în stoc;
+    trebuie transformat în proprietate şi DOAR accesat, fără să fie setat sau
+    şters (cel puţin nu din exterior).

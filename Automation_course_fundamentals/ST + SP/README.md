@@ -1,0 +1,1 @@
+# This directory contains a combination of theory & practice session exercises.
